@@ -9,3 +9,8 @@ Before do
     @order = OrderPage.new
     @popup = PopUp.new
 end
+
+After do
+    temp_shot = page.save_screenshot('logs/screenshots/temp_shot.png')
+    attach(temp_shot, 'image/png', 'Screenshot')
+end
